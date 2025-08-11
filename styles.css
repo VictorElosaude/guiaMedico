@@ -14,7 +14,6 @@
   box-sizing: border-box
 }
 
-
 body {
   margin: 0;
   background: linear-gradient(180deg, var(--bg-gradient-start), var(--bg-gradient-end));
@@ -110,7 +109,8 @@ p.lead {
 .cta-row {
   display: flex;
   gap: 14px;
-  align-items: center
+  align-items: center;
+  flex-wrap: wrap; /* Adicionado para quebrar os botões em linha */
 }
 
 .btn-primary {
@@ -122,7 +122,8 @@ p.lead {
   border: none;
   cursor: pointer;
   font-size: 16px;
-  box-shadow: 0 8px 20px rgba(32, 164, 144, 0.18)
+  box-shadow: 0 8px 20px rgba(32, 164, 144, 0.18);
+  white-space: nowrap; /* Impede quebra de linha */
 }
 
 .btn-outline {
@@ -132,13 +133,13 @@ p.lead {
   border-radius: 999px;
   color: var(--muted);
   font-weight: 600;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .meta {
   margin-top: 16px;
   color: var(--muted);
-  font-size: 13px
+  font-size: 13px;
 }
 
 /* hero-right card */
@@ -148,7 +149,7 @@ p.lead {
   border-radius: 12px;
   padding: 26px;
   position: relative;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .hero-right .graphic {
@@ -156,7 +157,7 @@ p.lead {
   height: 260px;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
 .glow-cross {
@@ -167,26 +168,21 @@ p.lead {
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(6px)
+  backdrop-filter: blur(6px);
 }
 
 .glow-cross:after {
   content: '+';
   font-size: 72px;
   color: rgba(255, 255, 255, 0.9);
-  font-weight: 800
+  font-weight: 800;
 }
 
 .doctor {
-  /* Remove as propriedades de posicionamento que você usou */
-  /* right: -10px; */
-  /* bottom: 10px; */
-
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Ajusta o elemento para o centro */
-  
+  transform: translate(-50%, -50%);
   width: 400px;
   opacity: 1;
 }
@@ -196,26 +192,29 @@ p.lead {
   display: flex;
   gap: 14px;
   padding: 26px 40px;
-  border-top: 1px solid rgba(2, 12, 18, 0.03)
+  border-top: 1px solid rgba(2, 12, 18, 0.03);
+  flex-wrap: wrap; /* Adicionado para quebrar em telas menores */
+  justify-content: center; /* Alinha os itens ao centro */
 }
 
 .feature {
-  flex: 1;
+  flex: 1 1 200px; /* Faz com que os itens se adaptem */
   background: white;
   border-radius: 10px;
   padding: 16px;
-  box-shadow: 0 6px 18px rgba(2, 12, 18, 0.04)
+  box-shadow: 0 6px 18px rgba(2, 12, 18, 0.04);
+  max-width: 250px; /* Limita a largura dos cards */
 }
 
 .feature h4 {
   margin: 0 0 6px;
-  color: #13323a
+  color: #13323a;
 }
 
 .feature p {
   margin: 0;
   color: var(--muted);
-  font-size: 14px
+  font-size: 14px;
 }
 
 footer {
@@ -223,11 +222,14 @@ footer {
   border-top: 1px solid rgba(2, 12, 18, 0.03);
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
+  flex-wrap: wrap; /* Adicionado para quebrar em telas menores */
 }
 
 .link-small {
-  color: var(--muted)
+  color: var(--muted);
+  text-align: center;
+  width: 100%;
 }
 
 /* background selos */
@@ -236,11 +238,14 @@ footer {
   padding: 20px 0;
   text-align: center;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .selo-bg {
   height: 50px;
-  /* Ajuste o tamanho conforme necessário */
   margin: 0 10px;
   opacity: 0.9;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
@@ -252,28 +257,35 @@ footer {
     grid-template-columns: 1fr;
   }
   .hero-right {
-    order: -1
+    order: -1;
   }
   h2.title {
-    font-size: 40px
+    font-size: 40px;
+  }
+  .features {
+    padding: 26px 20px;
   }
 }
 
 @media (max-width: 520px) {
   .wrap {
-    margin: 18px
+    margin: 18px;
   }
   h2.title {
-    font-size: 32px
+    font-size: 32px;
   }
   .hero-right {
-    height: 220px
+    height: 220px;
   }
   .doctor {
-    display: none
+    display: none;
   }
   .selo-bg {
     height: 30px;
+  }
+  .background-selos img.logo-img {
+      max-width: 100px;
+      height: auto;
   }
 }
 
@@ -284,10 +296,8 @@ footer {
   opacity: 0.8;
 }
 
-
-
 .footer-text {
   opacity: 0.9;
   font-size: 1rem;
-  color: #9aa6b3; /* Exemplo com código hexadecimal para um azul */
+  color: #9aa6b3;
 }
