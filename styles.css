@@ -16,6 +16,9 @@
 
 body {
   margin: 0;
+  /* Adicione os prefixos para maior compatibilidade */
+  background: -webkit-linear-gradient(180deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  background: -moz-linear-gradient(180deg, var(--bg-gradient-start), var(--bg-gradient-end));
   background: linear-gradient(180deg, var(--bg-gradient-start), var(--bg-gradient-end));
   color: #0b2430;
   min-height: 100vh;
@@ -144,7 +147,10 @@ p.lead {
 
 /* hero-right card */
 .hero-right {
+    background: -webkit-linear-gradient(180deg, #052a4a, #0b5068);
+  background: -moz-linear-gradient(180deg, #052a4a, #0b5068);
   background: linear-gradient(180deg, #052a4a, #0b5068);
+  
   color: white;
   border-radius: 12px;
   padding: 26px;
