@@ -201,6 +201,7 @@ p.lead {
   border-top: 1px solid rgba(2, 12, 18, 0.03);
   flex-wrap: wrap; /* Adicionado para quebrar em telas menores */
   justify-content: center; /* Alinha os itens ao centro */
+  text-align: center; /*adicionado a pedidos do eduardo*/
 }
 
 .feature {
